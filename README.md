@@ -1,37 +1,61 @@
-♛ Solving N-Queens Problem: Exhaustive Search vs. Genetic Algorithm
-A comprehensive comparative study of optimization algorithms on constraint satisfaction problems
+# ♛ Solving N-Queens Problem: Exhaustive Search vs. Genetic Algorithm
 
-Python Status Version
+<div align="center">
 
-📋 Overview
-This project presents a rigorous comparative analysis of four optimization algorithms for solving the N-Queens problem—a fundamental challenge in constraint satisfaction where the objective is to place N queens on an N×N chessboard such that no two queens attack each other (no shared row, column, or diagonal).
+**A comprehensive comparative study of optimization algorithms on constraint satisfaction problems**
 
-The study evaluates algorithm performance across scales from N=10 to N=500, examining real-world trade-offs between execution time, memory usage, and solution reliability.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)](.)
+[![Version](https://img.shields.io/badge/Version-1.0-blue.svg)](.)
 
-🎯 Algorithms Evaluated
-#	Algorithm	Approach	Complexity
-1	Depth-First Search	Exhaustive backtracking	O(N!)
-2	Greedy Hill-Climbing	Local optimization	O(N²) per iteration
-3	Simulated Annealing	Probabilistic search	Adaptive
-4	Genetic Algorithm	Population-based evolution	Adaptive
+</div>
 
-📊 Key Performance Comparison
-Performance Table
-Algorithm	Best For	Practical Limit	Speed @ N=500	Status
-DFS	N ≤ 20	N = 30 (142.5s)	❌ Timeout	Impractical
-Greedy	N ≤ 100	N = 500 (586s)	⚠️ Risky	Fast but unstable
-SA	N ≤ 500	N = 500 (469s)	✅ 8 minutes	Recommended
-GA	N = 500	N = 500 (6521s)	✅ ~2 hours	Reliable
+---
 
-Critical Insights
-✨ Key Finding: Exhaustive search fails exponentially, while metaheuristics scale effectively
+## 📋 Overview
 
-🔴 DFS Fails at N=50+ — Exponential growth makes it impractical beyond N=30
-🟢 Metaheuristics Succeed at Scale — SA and GA reliably solve N=500
-💾 Memory is Abundant — All methods use <1MB even for N=500
-⏱️ Time is the Bottleneck — CPU execution time determines algorithm choice
+This project presents a **rigorous comparative analysis** of four optimization algorithms for solving the N-Queens problem—a fundamental challenge in constraint satisfaction where the objective is to place N queens on an N×N chessboard such that no two queens attack each other (no shared row, column, or diagonal).
 
-📁 Project Structure
+The study evaluates algorithm performance across scales from **N=10 to N=500**, examining real-world trade-offs between execution time, memory usage, and solution reliability.
+
+---
+
+## 🎯 Algorithms Evaluated
+
+| # | Algorithm | Approach | Complexity |
+|---|-----------|----------|-----------|
+| 1 | **Depth-First Search** | Exhaustive backtracking | O(N!) |
+| 2 | **Greedy Hill-Climbing** | Local optimization | O(N²) per iteration |
+| 3 | **Simulated Annealing** | Probabilistic search | Adaptive |
+| 4 | **Genetic Algorithm** | Population-based evolution | Adaptive |
+
+---
+
+## 📊 Key Performance Comparison
+
+### Performance Table
+
+| Algorithm | Best For | Practical Limit | Speed @ N=500 | Status |
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| **DFS** | N ≤ 20 | N = 30 (142.5s) | ❌ Timeout | Impractical |
+| **Greedy** | N ≤ 100 | N = 500 (586s) | ⚠️ Risky | Fast but unstable |
+| **SA** | N ≤ 500 | N = 500 (469s) | ✅ 8 minutes | Recommended |
+| **GA** | N = 500 | N = 500 (6521s) | ✅ ~2 hours | Reliable |
+
+### Critical Insights
+
+> ✨ **Key Finding:** Exhaustive search fails exponentially, while metaheuristics scale effectively
+>
+> - 🔴 **DFS Fails at N=50+** — Exponential growth makes it impractical beyond N=30
+> - 🟢 **Metaheuristics Succeed at Scale** — SA and GA reliably solve N=500
+> - 💾 **Memory is Abundant** — All methods use <1MB even for N=500  
+> - ⏱️ **Time is the Bottleneck** — CPU execution time determines algorithm choice
+
+---
+
+## 📁 Project Structure
+
 ```
 N-Queens-Problem/
 │
@@ -58,25 +82,10 @@ N-Queens-Problem/
     └── N-Queens-drawio.pdf               # Full analysis document
 ```
 
-🔍 Detailed Algorithm Descriptions
+<div align="center">
 
-1. **DFS (Depth-First Search)** - Tries every possibility. Fast for small boards, times out at N=50+
-2. **Greedy** - Makes quick local choices. Very fast but sometimes fails
-3. **Simulated Annealing** - Random search with cooling. Balanced approach
-4. **Genetic Algorithm** - Population-based. Most reliable but slowest
+**Version 1.0** | Last Updated: May 2026
 
-💡 Key Findings
+For detailed methodology and complete results, see `reports/` directory.
 
-Brute force methods break at large scales. For N=500, you need metaheuristics like simulated annealing or genetic algorithms.
-
-The N-Queens problem at large scales (N=500) is only solvable with metaheuristic approaches—a critical lesson for developing real scheduling systems, routing optimization, and resource allocation algorithms in production environments.
-
-📄 License
-
-MIT
-
----
-
-Version 1.0 | Last Updated: May 2026
-
-For detailed methodology and complete results, see reports/ directory.
+</div>

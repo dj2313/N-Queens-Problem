@@ -14,6 +14,7 @@ The study evaluates algorithm performance across scales from N=10 to N=500, exam
 2	Greedy Hill-Climbing	Local optimization	O(N²) per iteration
 3	Simulated Annealing	Probabilistic search	Adaptive
 4	Genetic Algorithm	Population-based evolution	Adaptive
+
 📊 Key Performance Comparison
 Performance Table
 Algorithm	Best For	Practical Limit	Speed @ N=500	Status
@@ -21,6 +22,7 @@ DFS	N ≤ 20	N = 30 (142.5s)	❌ Timeout	Impractical
 Greedy	N ≤ 100	N = 500 (586s)	⚠️ Risky	Fast but unstable
 SA	N ≤ 500	N = 500 (469s)	✅ 8 minutes	Recommended
 GA	N = 500	N = 500 (6521s)	✅ ~2 hours	Reliable
+
 Critical Insights
 ✨ Key Finding: Exhaustive search fails exponentially, while metaheuristics scale effectively
 
@@ -30,6 +32,7 @@ Critical Insights
 ⏱️ Time is the Bottleneck — CPU execution time determines algorithm choice
 
 📁 Project Structure
+```
 N-Queens-Problem/
 │
 ├── 📄 README.md                          # Project documentation
@@ -53,8 +56,26 @@ N-Queens-Problem/
     ├── plot_memory.pdf                   # Memory usage analysis
     ├── plot_accuracy.pdf                 # Solution quality metrics
     └── N-Queens-drawio.pdf               # Full analysis document
-    
+```
+
+🔍 Detailed Algorithm Descriptions
+
+1. **DFS (Depth-First Search)** - Tries every possibility. Fast for small boards, times out at N=50+
+2. **Greedy** - Makes quick local choices. Very fast but sometimes fails
+3. **Simulated Annealing** - Random search with cooling. Balanced approach
+4. **Genetic Algorithm** - Population-based. Most reliable but slowest
+
+💡 Key Findings
+
+Brute force methods break at large scales. For N=500, you need metaheuristics like simulated annealing or genetic algorithms.
+
 The N-Queens problem at large scales (N=500) is only solvable with metaheuristic approaches—a critical lesson for developing real scheduling systems, routing optimization, and resource allocation algorithms in production environments.
+
+📄 License
+
+MIT
+
+---
 
 Version 1.0 | Last Updated: May 2026
 
